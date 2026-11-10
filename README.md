@@ -1,37 +1,39 @@
-# Projet2_PC-Nas
+# Poste client Windows et accès à un NAS TrueNAS
 
-Mini-Projet : Installation et Configuration d'un Poste Client avec Accès à un NAS
+Installation d'un poste client Windows 10 Entreprise et intégration à un réseau local avec accès aux partages d'un serveur de stockage TrueNAS.
 
-Objectif
+Mini-projet de formation : la configuration a d'abord été validée en environnement virtuel avant l'installation physique chez le client.
 
-L'objectif de ce projet était d'installer et d'intégrer un poste client dans un réseau local avec un accès à un serveur de stockage NAS (TrueNAS).
-De plus, un test a été réalisé en environnement virtuel pour valider la configuration avant l'installation physique chez le client.
+## Environnement
 
+| Élément | Détail |
+| --- | --- |
+| Poste client | Windows 10 Entreprise (version d'évaluation), en machine virtuelle |
+| Serveur de stockage | TrueNAS, accessible via `truenas.local` et `192.168.1.17` |
+| Réseau | Accès par pont sur les deux machines |
+| Virtualisation | VirtualBox |
 
-Étapes réalisées
+## Démarche
 
-1. Installation de Windows 10 Entreprise en machine virtuelle
+### 1. Préparation du poste client
 
-Téléchargement et installation de Windows 10 Entreprise (version d'évaluation) sur une machine virtuelle.
+Installation de Windows 10 Entreprise sur une machine virtuelle, puis configuration du réseau en mode pont pour placer le poste sur le même segment que le NAS.
 
-Configuration du réseau de la machine virtuelle avec accés par pont.
+### 2. Connexion au NAS
 
-Mot de passe de la session : Dpx78//@31
+- Vérification de la configuration réseau du NAS
+- Connexion par nom de domaine local (`truenas.local`) puis par adresse IP, pour valider la résolution de noms
+- Accès aux dossiers partagés depuis l'explorateur de fichiers Windows
+- Test de lecture et d'écriture dans un dossier utilisateur dédié
 
+### 3. Validation
 
-2. Connexion et accès au NAS (TrueNAS)
+Captures d'écran de l'accès aux partages depuis l'explorateur Windows et de l'interface d'administration de TrueNAS.
 
-Vérification de la configuration réseau du NAS (accés par pont).
+## Compétences mises en œuvre
 
-Connexion au NAS via son nom de domaine local truenas.local et son adresse IP 192.168.1.17.
+Installation et configuration d'un poste Windows · partages réseau SMB · résolution de noms sur réseau local · administration de base d'un NAS TrueNAS · validation en environnement virtuel avant déploiement
 
-Accès aux dossiers partagés sur le NAS via l'explorateur de fichiers Windows.
+## Note
 
-Test de lecture et d'écriture dans un dossier utilisateur spécifique (jdupont).
-
-
-3. Captures d'écran de validation
-
-Capture de l'explorateur de fichiers montrant l'accès aux dossiers partagés du NAS.
-
-Capture de l'interface de configuration de TrueNAS.
+Les machines virtuelles ne sont pas distribuées ici : les exports dépassent la limite de taille de GitHub. Le dépôt documente la démarche et la configuration.
